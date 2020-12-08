@@ -85,3 +85,33 @@ d = -(bestMatchIndex + mind – 1);
 ```  
 
 <img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/Figures/algo7.png" width = 500 hright = 220>  
+
+After the method is ready, the images "corridorl.jpg" and "corridorr.jpg" are read.  
+```matlab
+Pl1 = imread('corridorl.jpg');
+Pl1 = rgb2gray(Pl1);
+Pr1 = imread('corridorr.jpg');
+Pr1 = rgb2gray(Pr1);
+imshow(Pl1);
+imshow(Pr1);
+```  
+
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/corridorl.jpg" width = 475 height = 475>
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/corridorr.jpg" width = 475 height = 475>  
+
+Then, the disparity map is computed:  
+
+```matlab
+obj = disparityMapGenerator;
+D = obj.disparityMap(Pl1, Pr1, 25, 25);
+imshow(-D,[-15 15])
+```  
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/Figures/disp1.png" width =  475 height = 475>  
+
+Similarly, the disparity map of "triclops-i2l.jpg" and "triclops-i2r.jpg" is computed:   
+
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/triclops-i2l.jpg" width = 445 height = 375>
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/triclops-i2r.jpg" width = 445 height = 375>  
+
+<img src = "https://github.com/StephanieMussi/Stereo_Vision_Depth_Map_MatLab/blob/main/Figures/disp2.png" width =  445 height = 375>  
+
